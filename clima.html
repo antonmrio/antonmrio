@@ -1,0 +1,381 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Cache-Control" content="no-cache, no-store">
+<meta http-equiv="Pragma" content="no-cache, no-store">
+
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/boxClima.css">
+<link rel="stylesheet" href="css/popup.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+<link rel="icon" type="image/x-icon" href="images/cefetrj.ico">
+
+<title>LAPA - Laboratório de Análises e Previsões Ambientais - Cefet/Rj</title>
+    
+<script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="pagclima/jquery.colorbox.js"></script>
+<script type="text/javascript" src="pagclima/abas_funcoes.js"></script>
+<script type="text/javascript" src="pagclima/monitoramento.js"></script>
+
+<link rel="stylesheet" href="css/pagclima/colorbox.css">
+<link rel="stylesheet" href="css/pagclima/clima_tarja.css">
+
+</head>
+<body id="body">
+
+<!-- inicio topo-->
+
+<div id="topo">
+		<div id="header">
+      		Laboratório de Análises e Previsões Ambientais (LAPA - Cefet/RJ)
+    	</div>
+		<div id="menu">
+      	<a href="index.html">Início</a>
+      	<a href="x2.html">Previsão do Tempo</a>
+      	<a href="clima.html">Previsão do Clima</a>
+      	<a href="x4.html">Satélites</a>
+    <!--<a href="x5.html">Descarga Atmosférica</a>-->
+      	<a href="x6.html">Estação Meteorológica</a>
+    	</div>
+	</div>
+
+<div class="principal">
+<div class="conteudo">
+<!-- fim topo-->
+
+<div class="cont_dir">
+
+<div class="sub">Previsão Sazonal</div>
+<div class="modulo">
+<strong>Início da Rodada</strong>
+<br><br>
+<form name="mon_br" id="mon_br">
+<strong>Mês: </strong><select size="1" name="mes">
+<option value="01">Janeiro</option>
+<option value="02" selected="">Fevereiro</option>
+<option value="03">Março</option>
+<option value="04">Abril</option>
+<option value="05">Maio</option>
+<option value="06">Junho</option>
+<option value="07">Julho</option>
+<option value="08">Agosto</option>
+<option value="09">Setembro</option>
+<option value="10">Outubro</option>
+<option value="11">Novembro</option>
+<option value="12">Dezembro</option>
+</select>
+<strong>Ano:</strong> <select name="ano" id="ano">
+<option value="2023" selected="">2023</option>
+<option value="2022">2022</option>
+<option value="2021">2021</option>
+<option value="2020">2020</option>
+<option value="2019">2019</option>
+<option value="2018">2018</option>
+</select>
+<br><br>
+<strong>Campo:</strong>
+<br><br>
+<select name="campo" id="campo">
+<option value="pr_" selected="">Precipitação</option>
+<option value="tas_">Temperatura Média a 2 m</option>
+<option value="tasmax_">Temperatura Máxima a 2 m</option>
+<option value="tasmin_">Temperatura Mínima a 2 m</option>
+<option value="anomalia_pr_">Anomalia de Precipitação</option>
+<option value="anomalia_tas_">Anomalia de Temperatura Média a 2 m</option>
+<option value="anomalia_tasmax_">Anomalia de Temperatura Máxima a 2 m</option>
+<option value="anomalia_tasmin_">Anomalia de Temperatura Mínima a 2 m</option>
+</select>
+</form>
+<br>
+</div>
+
+<div class="sub">Anomalia da Chuva</div>
+<div class="modulo">
+
+<form name="mon_cidades" id="mon_cidades">
+<input type="hidden" name="regiao" value="brasil">
+<strong>Cidades:</strong>
+<select name="cidades" id="cidades">
+<option value="68" selected="">Selecione uma cidade</option>
+<option value="68">Rio de Janeiro</option>
+<option value="01">Angra dos Reis</option>
+<option value="02">Aperibé</option>
+<option value="03">Araruama</option>
+<option value="04">Areal</option>
+<option value="05">Armação dos Búzios</option>
+<option value="06">Arraial do Cabo</option>
+<option value="07">Barra do Piraí</option>
+<option value="08">Barra Mansa</option>
+<option value="09">Belford Roxo</option>
+<option value="10">Bom Jardim</option>
+<option value="11">Bom Jesus do Itabapoana</option>
+<option value="12">Cabo Frio</option>
+<option value="13">Cachoeiras de Macacu</option>
+<option value="14">Cambuci</option>
+<option value="15">Campos</option>
+<option value="16">Cantagalo</option>
+<option value="17">Carapebus</option>
+<option value="18">Cardoso Moreira</option>
+<option value="19">Carmo</option>
+<option value="20">Casimiro de Abreu</option>
+<option value="21">Comendador Levy Gasparian</option>
+<option value="22">Conceicao de Macabu</option>
+<option value="23">Cordeiro</option>
+<option value="24">Duas Barras</option>
+<option value="25">Duque de Caxias</option>
+<option value="26">Engenheiro Paulo de Frontin</option>
+<option value="27">Guapimirim</option>
+<option value="28">Iguaba Grande</option>
+<option value="29">Itaboraí</option>
+<option value="30">Itaguaí</option>
+<option value="31">Italva</option>
+<option value="32">Itaocara</option>
+<option value="33">Itaperuna</option>
+<option value="34">Itatiaia</option>
+<option value="35">Japeri</option>
+<option value="36">Laje do Muriaé</option>
+<option value="37">Macaé</option>
+<option value="38">Macuco</option>
+<option value="39">Magé</option>
+<option value="40">Mangaratiba</option>
+<option value="41">Maricá</option>
+<option value="42">Mendes</option>
+<option value="43">Mesquita</option>
+<option value="44">Miguel Pereira</option>
+<option value="45">Miracema</option>
+<option value="46">Natividade</option>
+<option value="47">Nilópolis</option>
+<option value="48">Niterói</option>
+<option value="49">Nova Friburgo</option>
+<option value="50">Nova Iguaçu</option>
+<option value="51">Paracambi</option>
+<option value="52">Paraíba do Sul</option>
+<option value="53">Parati</option>
+<option value="54">Paty do Alferes</option>
+<option value="55">Petrópolis</option>
+<option value="56">Pinheiral</option>
+<option value="57">Piraí</option>
+<option value="58">Porciúncula</option>
+<option value="59">Porto Real</option>
+<option value="60">Quatis</option>
+<option value="61">Queimados</option>
+<option value="62">Quissamã</option>
+<option value="63">Resende</option>
+<option value="64">Rio Bonito</option>
+<option value="65">Rio Claro</option>
+<option value="66">Rio das Flores</option>
+<option value="67">Rio das Ostras</option>
+<option value="68">Rio de Janeiro</option>
+<option value="69">Santa Maria Madalena</option>
+<option value="70">Santo Antônio de Pádua</option>
+<option value="71">São Fidélis</option>
+<option value="72">São Francisco de Itabapoana</option>
+<option value="73">São Gonçalo</option>
+<option value="74">São João da Barra</option>
+<option value="75">São João de Meriti</option>
+<option value="76">São José de Ubá</option>
+<option value="77">São José do Vale do Rio Preto</option>
+<option value="78">São Pedro da Aldeia</option>
+<option value="79">São Sebastião do Alto</option>
+<option value="80">Sapucaia</option>
+<option value="81">Saquarema</option>
+<option value="82">Seropédica</option>
+<option value="83">Silva Jardim</option>
+<option value="84">Sumidouro</option>
+<option value="85">Tanguá</option>
+<option value="86">Teresópolis</option>
+<option value="87">Trajano de Morais</option>
+<option value="88">Três Rios</option>
+<option value="89">Valença</option>
+<option value="90">Varre-Sai</option>
+<option value="91">Vassouras</option>
+<option value="92">Volta Redonda</option>
+</select>
+<br>
+<br>
+<strong>Mês:</strong>
+<select size="1" name="mes">
+<option value="01">Janeiro</option>
+<option value="02" selected="">Fevereiro</option>
+<option value="03">Março</option>
+<option value="04">Abril</option>
+<option value="05">Maio</option>
+<option value="06">Junho</option>
+<option value="07">Julho</option>
+<option value="08">Agosto</option>
+<option value="09">Setembro</option>
+<option value="10">Outubro</option>
+<option value="11">Novembro</option>
+<option value="12">Dezembro</option>
+</select>
+<strong>Ano:</strong>
+<select name="ano" id="ano">
+<option value="2023" selected="">2023</option>
+<option value="2022">2022</option>
+<option value="2021">2021</option>
+<option value="2020">2020</option>
+<option value="2019">2019</option>
+<option value="2018">2018</option>
+</select>
+</form>
+<br><br>
+</div>
+
+<div class="sub">Dados Mensais</div>
+<div class="modulo">
+<form name="dad_men" id="dad_men">
+<input type="hidden" name="regiao" value="brasil">
+<strong>Campo:</strong>
+<br><br>
+<select name="campo" id="campo">
+                <option value="precobs_cpc_">Escolha uma opção</option>
+                <option value="precobs_cpc_">Precipitação</option>
+                <option value="tmedobs_cpc_">Temperatura Média a 2m</option>
+                <option value="tmaxobs_cpc_">Temperatura Máxima a 2m</option>
+                <option value="tminobs_cpc_">Temperatura Mínima a 2m</option>
+                <option value="anompr_cpc_">Anomalia de Precipitação</option>
+                <option value="anomtmed_cpc_">Anomalia de Temperatura Média a 2m</option>
+                <option value="anomtmax_cpc_">Anomalia de Temperatura Máxima a 2m</option>
+                <option value="anomtmin_cpc_">Anomalia de Temperatura Mínima a 2m</option>
+              </select>
+<br>
+<br>
+<strong>Mês:</strong><select name="mes">
+<option value="01">Janeiro</option>
+<option value="02">Fevereiro</option>
+<option value="03" selected="">Março</option>
+<option value="04">Abril</option>
+<option value="05">Maio</option>
+<option value="06">Junho</option>
+<option value="07">Julho</option>
+<option value="08">Agosto</option>
+<option value="09">Setembro</option>
+<option value="10">Outubro</option>
+<option value="11">Novembro</option>
+<option value="12">Dezembro</option>
+</select>
+<strong>Ano:</strong><select name="ano" id="ano">
+<option value="2023" selected="">2023</option>
+<option value="2022">2022</option>
+<option value="2021">2021</option>
+<option value="2020">2020</option>
+<option value="2019">2019</option>
+<option value="2018">2018</option>
+</select>
+</form>
+<br><br>
+<strong>Climatologia Mensal</strong>
+<br><br>
+
+<form name="clim_men" id="clim_men">
+<strong>Campo:</strong><select name="campo" id="campo">
+<option value="precipclim_cpc_">Escolha uma opção</option>
+<option value="precipclim_cpc_">Precipitação</option>
+<option value="tmedclim_cpc_">Temperatura Média a 2m</option>
+<option value="tmaxclim_cpc_">Temperatura Máxima a 2m</option>
+<option value="tminclim_cpc_">Temperatura Mínima a 2m</option>
+</select>
+<br>
+<br>
+<strong>Mês:</strong>
+<select name="mes">
+<option value="01">Janeiro</option>
+<option value="02">Fevereiro</option>
+<option value="03">Março</option>
+<option value="04">Abril</option>
+<option value="05">Maio</option>
+<option value="06">Junho</option>
+<option value="07">Julho</option>
+<option value="08">Agosto</option>
+<option value="09">Setembro</option>
+<option value="10">Outubro</option>
+<option value="11">Novembro</option>
+<option value="12">Dezembro</option>
+</select>
+</form>
+</div>
+
+<div class="sub">Avaliação da Previsão</div>
+<div class="modulo">
+<form name="ava_br" id="ava_br">
+<strong>Início da Rodada</strong>
+<br><br>
+<select name="campo" id="campo">
+                <option value="biaspr_cpc_">Precipitação</option>
+                <option value="biastmed_cpc_">Temperatura Média a 2m</option>
+                <option value="biastmax_cpc_">Temperatura Máxima a 2m</option>
+                <option value="biastmin_cpc_">Temperatura Mínima a 2m</option>
+                <option value="anomalia_pr_cpc_">Anomalia de Precipitação</option>
+                <option value="anomalia_tmed_cpc_">Anomalia de Temperatura Média a 2m</option>
+                <option value="anomalia_tmax_cpc_">Anomalia de Temperatura Máxima a 2m</option>
+                <option value="anomalia_tmin_cpc_">Anomalia de Temperatura Mínima a 2m</option>
+              </select>
+<br>
+<br>
+<strong>Mês:</strong><select name="mes">
+<option value="01">Janeiro</option>
+<option value="02" selected="">Fevereiro</option>
+<option value="03">Março</option>
+<option value="04">Abril</option>
+<option value="05">Maio</option>
+<option value="06">Junho</option>
+<option value="07">Julho</option>
+<option value="08">Agosto</option>
+<option value="09">Setembro</option>
+<option value="10">Outubro</option>
+<option value="11">Novembro</option>
+<option value="12">Dezembro</option>
+</select>
+<strong>Ano:</strong><select name="ano" id="ano">
+<option value="2023" selected="">2023</option>
+<option value="2022">2022</option>
+<option value="2021">2021</option>
+<option value="2020">2020</option>
+<option value="2019">2019</option>
+<option value="2018">2018</option>
+</select>
+</form>
+</div>
+
+</div>
+
+<!--inicio meio -->
+<div class="cont_meio">
+<div class="sub">Imagens</div>
+<!--<strong>Selecione os campos à esquerda</strong>-->
+<span class="figuras"><img src="http://meteoro.cefet-rj.br/clima/202302/rj/pr_202302-rj.png"></span>
+</div>
+<!--fim meio -->
+
+</div>
+</div>
+
+
+
+<map name="Map3">
+  <area shape="rect" coords="24,24,113,239" href="/mapas.php?regiao=indico">
+  <area shape="rect" coords="113,24,332,239" href="/mapas.php?regiao=pacifico">
+  <area shape="rect" coords="333,23,453,239" href="/mapas.php?regiao=atlantico">
+</map>
+
+
+<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-row">
+      <div class="footer-col footer-text">
+        <p>Desenvolvido pelo Laboratório de Análises e Previsões Ambientais do Cefet/RJ</p>
+      </div>
+      <div class="footer-col footer-links">
+        <ul>
+          <li><a href="politica.html">Política de Uso</a></li>
+          <li><a href="quemsomos.html">Sobre Nós</a></li>
+          <li><a href="#topo">Voltar para o topo</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body></html>

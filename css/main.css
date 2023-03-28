@@ -1,0 +1,167 @@
+body {
+	margin: 0;
+	margin-top: 80px;
+	padding: 0;
+	background-color: #f2f2f2;
+}
+
+hr {
+	border: 0; 
+	height: 2px; 
+	background-image: linear-gradient(to right,#f2f2f2, #4C647B, #647b4c, #f2f2f2);
+}
+
+.topo {
+  position: relative;
+}
+
+#header {
+	background-color: #0a497e;
+	color: white;
+	text-align: center;
+	font-size: 20px;
+	font-family: "Open Sans", sans-serif !important;
+	font-weight: 600;
+	padding: 10px 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+#menu {
+	background-color: #DBDBDB;
+	text-align: center;
+	font-size: 9px;
+	padding: 10px 0;
+	position: fixed;
+	top: 45px;
+	width: 100%;
+  		
+}
+#menu a {
+	text-decoration: none;
+	color: black;
+	padding: 10px;
+	text-align: center;
+	font-family: "Open Sans", sans-serif;
+	font-size: 11px;
+	text-transform: uppercase;
+}
+#menu a:hover {
+	background-color: #f2f2f2;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	
+      }
+#menu a:not(:last-child) { border-right: 1px solid black; border-right-color: #CCCCCC;}
+
+h1{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	font-size: 20px;
+	text-transform: uppercase;
+}
+#textomeio{
+	margin: 10%;
+	font-family: "Open Sans", sans-serif;
+	text-align: justify;
+}
+#textomeio h1{text-transform: uppercase;}
+
+/* Estilos para o footer */
+.footer {
+  background-color: #0A497E;
+  color: #fff;
+  padding: 10px 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-family: "Open Sans"
+}
+
+/* Estilos para o container do footer */
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Estilos para a linha do footer */
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Estilos para a coluna de texto */
+.footer-col.footer-text {
+  flex-basis: 100%;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Estilos para a coluna de links */
+.footer-col.footer-links {
+  text-align: right;
+  padding-left: 40vw;
+}
+
+/* Estilos para a lista de links */
+.footer-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para os itens da lista de links */
+.footer-links li {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+/* Estilos para os links */
+.footer-links a {
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+/* Estilos para os links quando passar o mouse sobre */
+.footer-links a:hover {
+  font-weight: 600;
+}
+
+/* Estilos para o link "Voltar para o topo" */
+.footer-links a[href="#topo"] {
+  display: inline-block;
+  border: 2px solid #fff;
+  padding: 8px 12px;
+  border-radius: 25px;
+  transition: all 0.2s ease;
+}
+
+/* Estilos para o link "Voltar para o topo" quando passar o mouse sobre */
+.footer-links a[href="#topo"]:hover {
+  background-color: #fff;
+  color: #0A497E;
+}
+
+	/* estilo para dispositivos móveis */
+@media (max-width: 767px) {
+	body{
+		margin-top: 90px;
+	}
+    #menu {
+		font-size: 15px;
+		padding: 10px 0;
+		top: 45px;
+	}
+
+    #menu a {
+		padding: 3px;
+		font-size: 12px;
+	}
+}
+
+@media (max-width: 612px) { #menu { top: 70px; } }
+@media (max-width: 535px) { body { margin-top: 120px; } }

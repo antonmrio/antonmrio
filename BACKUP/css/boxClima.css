@@ -1,0 +1,89 @@
+.wrapper {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.container {
+	align-items: center;
+	margin: 20px;
+	overflow: hidden;
+	width: 40vw;
+}
+.boxRJ1, .boxOUT1 {
+	display: flex;
+	align-items: center;
+	background-color: #003c72;
+	color: white;
+	padding: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.boxRJ1 .arrow, .boxOUT1 .arrow {
+	width: 0; 
+	height: 0; 
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+}
+
+.boxRJ1 .arrow.left, .boxOUT1 .arrow.left {
+	border-right: 15px solid white;
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+.boxRJ1 .arrow.right, .boxOUT1 .arrow.right {
+	border-left: 15px solid white;
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+.boxRJ1 .text, .boxOUT1 .text {
+	flex: 1;
+	text-align: center;
+	cursor: text;
+	font-family: 'Open Sans';
+}
+
+.boxRJ2, .boxOUT2 {
+	background-color: white;
+	padding: 20px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.boxRJ2 .text, .boxOUT2 .text {
+	text-align: justify;
+	line-height: 1.5;
+	font-size: 18px;
+	font-family: 'Open Sans';
+	word-wrap: break-word;
+}
+/*Texto dentro da caixa branca = box[]2*/
+pre {
+  white-space: pre-wrap;
+}
+
+code {
+  font-size: 20px;
+  font-family: 'Open Sans';
+  padding: 10px;
+  background-color: #f2f2f2;
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+
+@media screen and (max-width: 600px) {
+
+	.wrapper {
+		flex-direction: column;
+	}
+	.container {
+		margin: 10px;
+		overflow: hidden;
+		width: 95vw;
+	}
+}

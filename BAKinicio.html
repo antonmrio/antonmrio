@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/boxClima.css">
+<link rel="stylesheet" href="css/popup.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+<link rel="icon" type="image/x-icon" href="images/cefetrj.ico">
+
+	<title>LAPA - Laboratório de Análises e Previsões Ambientais - Cefet/Rj</title>
+</head>
+
+<body>
+	<div id= "topo">
+		<div id="header">
+      		Laboratório de Análises e Previsões Ambientais (LAPA - Cefet/RJ)
+    	</div>
+		<div id="menu">
+      	<a href="inicio.html">Início</a>
+      	<a href="x2.html">Previsão do Tempo</a>
+      	<a href="x3.html">Previsão do Clima</a>
+      	<a href="x4.html">Satélites</a>
+    <!--<a href="x5.html">Descarga Atmosférica</a>-->
+      	<a href="x6.html">Estação Meteorológica</a>
+    	</div>
+	</div>
+	
+	<div class = "boxes_previsao">
+		<div class="wrapper_c">
+			
+			<div class="container_c">
+				<h1>Estado do Rio de Janeiro:</h1>
+	  		<div class="boxRJ1">
+    			<div class="arrow left"></div>
+    			<div class="text">Estado</div>
+    			<div class="arrow right"></div>
+	 		</div>
+  				<div class="boxRJ2">
+    				<div class="text">Informações adicionais sobre Texto 1</div>
+						<div class="more-info-container">
+    						<button class="more-info-btn">Mais informações</button>
+ 						</div>
+				</div>
+			</div>
+	
+			<div class="container_c">
+				<h1>Outras Capitais:</h1>
+	  		<div class="boxOUT1">
+    			<div class="arrow left"></div>
+    			<div class="text">Estado</div>
+    			<div class="arrow right"></div>
+	  		</div>
+  				<div class="boxOUT2">
+    				<div class="text">Informações adicionais sobre Texto 1</div>
+					<div class="more-info-container">
+    					<button class="more-info-btn">Mais informações</button>
+ 					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<hr>
+	<div class = "boxes_infos">
+		<div class="wrapper_i">
+			
+			<div class="container_i">
+				<div class="boxINFO1">
+					<div class="text">Descarga Atmosférica</div>
+				</div>
+				<div class="boxINFO2">
+    				<img src="images/raio-page.png" alt="Descarga" width="100%" onclick="openPopup('images/raio-page.png');">
+						<div class="popup" id="popup">
+							<span class="close-button" onclick="closePopup()">&times;</span>
+							<img id="popupImage" alt="Descarga" onclick="closePopup()">
+						</div>
+						<div class="background" onclick="closePopup()"></div>
+					<br><a>Clique na imagem para ampliar</a>
+				</div>
+			</div>
+			
+			<div class="container_i">	
+				<div class="boxINFO1">
+					<div class="text">Satélites</div>
+				</div>
+				<div class="boxINFO2">
+    				<img src="images/met-cefet.png" alt="Satelite" width="100%" onclick="openPopup('images/met-cefet.png');">
+						<div class="popup" id="popup2">
+							<span class="close-button" onclick="closePopup()">&times;</span>
+							<img id="popupImage2" alt="Satelite" onclick="closePopup()">
+						</div>
+						<div class="background" onclick="closePopup()"></div>
+					<br><a>Clique na imagem para ampliar</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<script src="js/boxClimaSlide.js"></script>
+<script src="js/popup.js"></script>
+	
+</body>
+	
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-row">
+      <div class="footer-col footer-text">
+        <p>Desenvolvido pelo Laboratório de Análises e Previsões Ambientais do Cefet/RJ</p>
+      </div>
+      <div class="footer-col footer-links">
+        <ul>
+          <li><a href="x7.html">Política de Uso</a></li>
+          <li><a href="x8.html">Sobre Nós</a></li>
+          <li><a href="#topo">Voltar para o topo</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</html>

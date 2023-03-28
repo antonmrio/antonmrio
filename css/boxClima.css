@@ -1,0 +1,138 @@
+/*.boxes_previsao{
+	background-image: linear-gradient(#d2d2d2, #f2f2f2);
+}*/
+
+.wrapper_c, .wrapper_i {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.container_c {
+	align-items: center;
+	margin: 30px;
+	overflow: hidden;
+	width: 40vw;
+	padding-bottom: 5vh;
+}
+
+.container_i{
+	padding-top: 5vh;
+	align-items: center;
+	margin: 30px;
+	overflow: hidden;
+	width: 45vw;
+}
+
+.boxRJ1, .boxOUT1 {
+	display: flex;
+	align-items: center;
+	background: #4C647B;
+	background: -webkit-linear-gradient(to right, #4c647b, #4C587B, #4c647b);
+	background: linear-gradient(to right, #4c647b, #4C587B, #4c647b);
+	color: white;
+	padding: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.boxINFO1 {
+	display: flex;
+	align-items: center;
+	background: #647b4c;
+	background: -webkit-linear-gradient(to right, #647b4c, #5D6E59, #647b4c);
+	background: linear-gradient(to right, #647b4c, #5D6E59, #647b4c);
+	color: white;
+	padding: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.boxRJ1 .arrow, .boxOUT1 .arrow {
+	width: 0; 
+	height: 0; 
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+}
+
+.boxRJ1 .arrow.left, .boxOUT1 .arrow.left {
+	border-right: 15px solid white;
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+.boxRJ1 .arrow.right, .boxOUT1 .arrow.right {
+	border-left: 15px solid white;
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+.boxRJ1 .text, .boxOUT1 .text, .boxINFO1 .text {
+	flex: 1;
+	text-align: center;
+	cursor: text;
+	font-family: 'Open Sans';
+}
+
+.boxRJ2, .boxOUT2, .boxINFO2 {
+	background-color: white;
+	padding: 20px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.boxINFOajuste{
+	align-content: center;
+}
+
+
+.boxINFO2 a{
+	font-family: "Open Sans";
+	font-size: 0.7em;
+	text-align: justify; 
+}
+.boxINFO2 img{cursor: zoom-in;;}
+
+.boxRJ2 .text, .boxOUT2 .text, .boxINFO2 .text {
+	text-align: justify;
+	line-height: 1.5;
+	font-size: 18px;
+	font-family: 'Open Sans';
+	word-wrap: break-word;
+}
+/*Texto dentro da caixa branca = box[]2*/
+pre {
+  white-space: pre-wrap;
+}
+
+code {
+  font-size: 30px;
+  font-family: 'Open Sans';
+  padding: 5px 5vw;
+  background-color: #F9F9F9;
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+code a{
+	font-size: 20px;
+}
+code img{
+	width: 2em;
+	align-content: center;
+}
+
+.boxes_infos{
+	background-color: #f2f2f2;
+}
+
+@media screen and (max-width: 688px) {
+
+	.wrapper_c, .wrapper_i {
+		flex-direction: column;
+	}
+	.container_c, .container_i {
+		margin: 10px;
+		overflow: hidden;
+		width: 95vw;
+	}
+}
