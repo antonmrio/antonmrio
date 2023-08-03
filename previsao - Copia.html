@@ -9,10 +9,6 @@
 <link rel="icon" type="image/x-icon" href="imagens/cefetrj.ico">
 
 	<title>LAPA - Previsão do Tempo - CoordMet / CEFET-RJ</title>
-
-	<style>
-		h2{font-weight: 100;}
-	</style>
 </head>
 
 <body>
@@ -31,8 +27,8 @@
 	</div>
 <div id="textomeio" style="margin: 5%">
 <div id="navcontainer">
-	<h1>Previsão numérica do Tempo para 2 dias:</h1>
-	<h2>(Por cidade ou região)</h2>
+	<h2>Modelagem Numérica: Regional Atmospheric Modeling System (RAMS)</h2>
+	<h1 style="padding: 10px">Previsão do Tempo em Tabelas: (Por cidade ou região)</h1>
 <ul style="padding: 10px">
 	<li><a href="previsao-rj.html">Rio de Janeiro</a></li>
 	<li><a href="previsao-bf.html" >Baixada Fluminense</a></li>
@@ -50,16 +46,13 @@
 	<li><a href="previsao-cu.html">Curitiba</a></li>
 	<li><a href="previsao-cg.html">Campo Grande</a></li>
 	<li><a href="previsao-vt.html">Vitória</a></li>
-</ul>
-<br>	
+</ul>	
+</div>
 </div>
 
-<hr><br>
-
+<div id="textomeio" style="margin: 5%">
 <div align="center">
-<h1>Meteogramas:</h1>
-<h2>Previsão para 3 dias a partir de hoje<h2>
-<h2>(Estado do Rio de Janeiro, Capitais do Brasil ou Estado de Santa Catarina)</h2>
+<h1>Meteogramas: (Estado do Rio de Janeiro, Brasil ou Santa Catarina)</h1>
 	<div class="dropdownPrev">
 		<select onchange="if (this.value != '#') window.open(this.value)">
 			<option value="#" selected>Cidades do Rio de Janeiro</option>
@@ -116,15 +109,14 @@
 			<option value="met-saojoaquim.png">São Joaquim</option>
 		</select>
 	</div>
-<br>
+</div>
 </div>
 
-<hr><br>
 
+<div id="textomeio" style="margin: 5%">
 <div align="center">
-<h1>Animações de Variáveis do Tempo:</h1>
-<h2>(Cobertura de nuvens, temperatura, vento, etc.)</h2>
-	<div class="dropdownPrev" style="background-color: #8b5898">
+<h1>Animações: (Correntes, nuvens, vento, etc.)</h1>
+	<div class="dropdownPrev">
         <select onchange="if (this.value != '#') window.open(this.value,'_blank')">
           <option value="#">Selecione o campo que deseja consultar</option>
           <option value="uvseapress.html">PNMM, Vento em 925 hPa e Chuva acumulada em 3h</option>
@@ -149,9 +141,7 @@
         </select>
       </div>
 </div>
-
-<hr><br>
-<h2>Modelagem Numérica: Regional Atmospheric Modeling System (RAMS)</h2>
+</div>
 </div>
 </body>
 	

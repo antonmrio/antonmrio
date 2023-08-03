@@ -8,9 +8,9 @@
 <link rel="stylesheet" href="css/boxClima.css">
 <link rel="stylesheet" href="css/popup.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
-<link rel="icon" type="image/x-icon" href="images/cefetrj.ico">
+<link rel="icon" type="image/x-icon" href="imagens/cefetrj.ico">
 
-<title>LAPA - Laboratório de Análises e Previsões Ambientais - Cefet/Rj</title>
+<title>LAPA - Previsão de Clima - CoordMet / CEFET-RJ</title>
     
 <script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="pagclima/jquery.colorbox.js"></script>
@@ -19,7 +19,7 @@
 
 <link rel="stylesheet" href="css/pagclima/colorbox.css">
 <link rel="stylesheet" href="css/pagclima/clima_tarja.css">
-
+<style>body{background-image: linear-gradient(#043d6b, #1d405d, #879aaa, #f2f2f2, #f2f2f2, #f2f2f2, #f2f2f2);}</style>
 </head>
 <body id="body">
 
@@ -27,20 +27,20 @@
 
 <div id="topo">
 		<div id="header">
-      		Laboratório de Análises e Previsões Ambientais (LAPA - Cefet/RJ)
+      		Laboratório de Análises e Previsões Ambientais - CoordMet / CEFET-RJ
     	</div>
 		<div id="menu">
       	<a href="index.html">Início</a>
-      	<a href="x2.html">Previsão do Tempo</a>
+      	<a href="previsao.html">Previsão do Tempo</a>
       	<a href="clima.html">Previsão do Clima</a>
-      	<a href="x4.html">Satélites</a>
+      	<a href="satelites.html">Satélites</a>
     <!--<a href="x5.html">Descarga Atmosférica</a>-->
-      	<a href="x6.html">Estação Meteorológica</a>
+      	<a href="estacao/pagina.html">Estação Meteorológica</a>
     	</div>
 	</div>
 
 <div class="principal">
-<div class="conteudo">
+<div class="conteudo" style="background-color: white;padding: 20px;border-radius: 5px;">
 <!-- fim topo-->
 
 <div class="cont_dir">
@@ -343,7 +343,7 @@
 <div class="cont_meio">
 <div class="sub">Imagens</div>
 <!--<strong>Selecione os campos à esquerda</strong>-->
-<span class="figuras"><img src="http://meteoro.cefet-rj.br/clima/202302/rj/pr_202302-rj.png"></span>
+<span class="figuras"><img src="../clima/202306/rj/pr_202306-rj.png" name="mapa" id="mapa"></span>
 </div>
 <!--fim meio -->
 
@@ -365,7 +365,7 @@
   <div class="footer-container">
     <div class="footer-row">
       <div class="footer-col footer-text">
-        <p>Desenvolvido pelo Laboratório de Análises e Previsões Ambientais do Cefet/RJ</p>
+        <p>Desenvolvido pelo Laboratório de Análises e Previsões Ambientais - LAPA - Coordenação de Meteorologia do Cefet/RJ.</p>
       </div>
       <div class="footer-col footer-links">
         <ul>

@@ -25,7 +25,7 @@ function setupBox(selector1, selector2, leftSelector, rightSelector, textArray, 
 const textArray1 = [
    {
     text: 'Rio de Janeiro (Capital)',
-    additionalInfo: '<img src="images/1.png" alt="Sol"><span style="color:#00DEFF"> 21.9 </span><a>ºC</a><span style="color:#d30000"> 26.9 </span><a>ºC</a>'
+    additionalInfo: '<img src="imagens/1.png" alt="Sol"><span style="color:#00DEFF"> 21.9 </span><a>ºC</a><span style="color:#d30000"> 26.9 </span><a>ºC</a>'
   },
   {
     text: 'Centro Fluminense',
@@ -56,8 +56,8 @@ setupBox('.boxRJ1 .text', '.boxRJ2 .text', '.boxRJ1 .arrow.left', '.boxRJ1 .arro
 
 const textArray2 = [
   {
-    text: 'Brasilia',
-    additionalInfo: '<span style="color:#00DEFF"> 24.5 </span><a>ºC</a><span style="color:#d30000"> 34.2 </span><a>ºC</a>'
+    text: 'Brasília',
+    additionalInfo: '<img src="imagens/1.png" alt="Sol"><span style="color:#00DEFF"> 24.5 </span><a>ºC</a><span style="color:#d30000"> 34.2 </span><a>ºC</a>'
   },
   {
     text: 'São Paulo',

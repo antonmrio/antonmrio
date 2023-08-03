@@ -1,123 +1,234 @@
-<!doctype html>
+<!DOCTYPE HTML>
 <html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/boxClima.css">
-<link rel="stylesheet" href="css/popup.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
-<link rel="icon" type="image/x-icon" href="images/cefetrj.ico">
 
-<title>LAPA - Laboratório de Análises e Previsões Ambientais - Cefet/Rj</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/boxClima.css">
+	<link rel="stylesheet" href="css/navbar.css">
+	<link rel="stylesheet" href="css/popup.css">
+	<link rel="stylesheet" href="css/dropdownindex.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+	<link rel="icon" type="image/x-icon" href="imagens/cefetrj.ico">
+
+	<title>LAPA - Laboratório de Análises e Previsões Ambientais - CoordMet / CEFET-RJ</title>
+	<style>
+		body {
+			background-image: linear-gradient(#043d6b, #1d405d, #879aaa, #f2f2f2, #f2f2f2, #f2f2f2, #f2f2f2);
+		}
+	</style>
 </head>
 
-<body>
-	<div id= "topo">
+<body onload="mostrarConteudo('guia-1', document.querySelector('.active'))">
+	<div id="topo">
 		<div id="header">
-      		Laboratório de Análises e Previsões Ambientais (LAPA - Cefet/RJ)
-    	</div>
+			Laboratório de Análises e Previsões Ambientais - CoordMet / CEFET-RJ
+		</div>
 		<div id="menu">
-      	<a href="index.html">Início</a>
-      	<a href="x2.html">Previsão do Tempo</a>
-      	<a href="clima.html">Previsão do Clima</a>
-      	<a href="x4.html">Satélites</a>
-    <!--<a href="x5.html">Descarga Atmosférica</a>-->
-      	<a href="x6.html">Estação Meteorológica</a>
-    	</div>
-	</div>
-	
-	<div class = "boxes_previsao">
-		<div class="wrapper_c">
-			
-			<div class="container_c">
-				<h1>Estado do Rio de Janeiro:</h1>
-	  		<div class="boxRJ1">
-    			<div class="arrow left"></div>
-    			<div class="text">Estado</div>
-    			<div class="arrow right"></div>
-	 		</div>
-  				<div class="boxRJ2">
-    				<div class="text">Informações adicionais sobre Texto 1</div>
-						<div class="more-info-container">
-    						<button class="more-info-btn">Mais informações</button>
- 						</div>
-				</div>
-			</div>
-	
-			<div class="container_c">
-				<h1>Outras Capitais:</h1>
-	  		<div class="boxOUT1">
-    			<div class="arrow left"></div>
-    			<div class="text">Estado</div>
-    			<div class="arrow right"></div>
-	  		</div>
-  				<div class="boxOUT2">
-    				<div class="text">Informações adicionais sobre Texto 1</div>
-					<div class="more-info-container">
-    					<button class="more-info-btn">Mais informações</button>
- 					</div>
-				</div>
-			</div>
-			
+			<a href="index.html">Início</a>
+			<a href="previsao.html">Previsão do Tempo</a>
+			<a href="clima.html">Previsão do Clima</a>
+			<a href="satelites.html">Satélites</a>
+			<!--<a href="x5.html">Descarga Atmosférica</a>-->
+			<a href="estacao/pagina.html">Estação Meteorológica</a>
 		</div>
 	</div>
-	<hr>
-	<div class="boxes_infos">
-  		<div class="wrapper_i">
-    		<div class="container_i">
-      		<div class="boxINFO1">
-        		<div class="text">Descarga Atmosférica</div>
-      		</div>
-      		<div class="boxINFO2">
-        		<img src="images/raio-page.png" alt="Descarga" width="100%" onclick="openPopup('popup1', 'background1', 'images/raio-page.png');">
-        		<div class="popup" id="popup1">
-          			<span class="close-button" onclick="closePopup('popup1', 'background1')">&times;</span>
-          			<img id="popupImage1" alt="Descarga" onclick="closePopup('popup1', 'background1')">
-        		</div>
-        		<div class="background" id="background1" onclick="closePopup('popup1', 'background1')"></div>
-        		<br><a>Clique na imagem para ampliar</a>
-      		</div>
-    		</div>
+	<br>
+<div class="boxes">
+	<div class="boxes_previsao">
+		<div class="wrapper_c">
 
-    		<div class="container_i">
-      		<div class="boxINFO1">
-        		<div class="text">Previsão em Tabela</div>
-      		</div>
-	  		<div class="boxINFO2">
-        		<img src="images/met-cefet.png" alt="Satelite" width="70%" onclick="openPopup('popup2', 'background2', 'images/met-cefet.png');">
-        		<div class="popup" id="popup2">
-          			<span class="close-button" onclick="closePopup('popup2', 'background2')">&times;</span>
-          			<img id="popupImage2" alt="Satelite" onclick="closePopup('popup2', 'background2')">
-        		</div>
-        		<div class="background" id="background2" onclick="closePopup('popup2', 'background2')"></div>
-        		<br><a>Clique na imagem para ampliar</a>
-      		</div>
-    		</div>
-	  </div>
+			<div class="container_c">
+				<h1 style= "color: #ddd710;">Previsão do Tempo para <span id="date"></span>. Min/Max: Graus ºC - Modelo RAMS</h1>
+				<div class="boxRJ1">
+					
+					<div class="text">Estado do Rio de Janeiro</div>
+					
+				</div>
+				<div class="boxRJ2">
+					
+					<div class="dropdown">
+						<a href="previsao-rj.html">Rio de Janeiro <span style="color:#0096C3"> 16.8 </span> / <span style="color:#d30000"> 24.4 </span></a>
+						<div>
+						  	<ul>
+								<li><a href="previsao-cf.html">Centro Fluminense <span style="color:#0096c3"> 20.4 </span> / <span style="color:#d30000"> 26.4 </span></a></li>
+								<li><a href="previsao-lf.html">Leste Fluminense <span style="color:#0096C3"> 19.6 </span> / <span style="color:#d30000"> 22.2 </span></a></li>
+								<li><a href="previsao-nf.html">Norte Fluminense <span style="color:#0096C3"> 18.2 </span> / <span style="color:#d30000"> 23.8 </span></a></li>
+								<li><a href="previsao-sf.html">Sul Fluminense <span style="color:#0096C3"> 18.2 </span> / <span style="color:#d30000"> 27.4 </span></a></li>
+								<li><a href="previsao-nof.html">Noroeste Fluminense <span style="color:#0096C3"> 17.8 </span> / <span style="color:#d30000"> 25.5 </span></a></li>
+								<li><a href="previsao-bf.html">Baixada Fluminense <span style="color:#0096C3"> 16.0 </span> / <span style="color:#d30000"> 26.7 </span></a></li>
+							</ul>
+					  	</div>
+					</div>
+					
+				</div>
+			</div>
+
+			<div class="container_c">
+				<h1 style="visibility: hidden;">-</h1>
+				<div class="boxOUT1">
+					
+					<div class="text">Outras Capitais</div>
+					
+				</div>
+				<div class="boxOUT2">
+					
+					<div class="dropdown2">
+						<a href="previsao-bsb.html"> Brasília <span style="color:#0096C3"> 22.0 </span> / <span style="color:#d30000"> 35.9 </span></a>
+						<div>
+						  <ul>
+							<li><a href="previsao-sp.html">São Paulo <span style="color:#0096C3"> 18.1 </span> / <span style="color:#d30000"> 29.7 </span></a></li>
+							<li><a href="previsao-bh.html">Belo Horizonte <span style="color:#0096C3"> 19.9 </span> / <span style="color:#d30000"> 31.0 </span></a></li>
+							<li><a href="previsao-pl.html">Porto Alegre<span style="color:#0096C3"> 15.8 </span> / <span style="color:#d30000"> 26.0 </span></a></li>
+							<li><a href="previsao-cu.html">Curitiba <span style="color:#0096C3"> 13.4 </span> / <span style="color:#d30000"> 27.4 </span></a></li>
+							<li><a href="previsao-fl.html">Florianópolis <span style="color:#0096C3"> 19.4 </span> / <span style="color:#d30000"> 22.4 </span></a></li>
+							<li><a href="previsao-go.html">Goiânia <span style="color:#0096C3"> 16.5 </span> / <span style="color:#d30000"> 35.4 </span></a></li>
+							<li><a href="previsao-vt.html">Vitória <span style="color:#0096C3"> 20.0 </span> / <span style="color:#d30000"> 24.7 </span></a></li>
+							<li><a href="previsao-cg.html">Campo Grande <span style="color:#0096C3"> 21.4 </span> / <span style="color:#d30000"> 33.1 </span></a></li>
+						  </ul>
+					  </div>
+					</div>
+					
+				</div>
+			</div>
+
+		</div>
 	</div>
-	
-<script src="js/boxClimaSlide.js"></script>
-<script src="js/popup.js"></script>
-	
-</body>
-	
-<footer class="footer">
-  <div class="footer-container">
-    <div class="footer-row">
-      <div class="footer-col footer-text">
-        <p>Desenvolvido pelo Laboratório de Análises e Previsões Ambientais do Cefet/RJ</p>
-      </div>
-      <div class="footer-col footer-links">
-        <ul>
-          <li><a href="politica.html">Política de Uso</a></li>
-          <li><a href="quemsomos.html">Sobre Nós</a></li>
-          <li><a href="#topo">Voltar para o topo</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</footer>
+	<!--<hr>-->
+	<div class="boxes_infos">
+		<div class="wrapper_i">
+			<div class="container_i">
+				<div class="boxINFO1">
+					<div class="text">Descarga Atmosférica</div>
+				</div>
+				<div class="boxINFO2">
+					<img id="descarga" src="http://meteoro.cefet-rj.br/raio-page.png" alt="Descarga" width="100%"
+						onclick="openPopup('popup1', 'background1', 'http://meteoro.cefet-rj.br/raio-page.png');">
+					<div class="popup" id="popup1">
+						<span class="close-button" onclick="closePopup('popup1', 'background1')">×</span>
+						<img id="popupImage1" alt="Descarga" onclick="closePopup('popup1', 'background1')">
+					</div>
+					<div class="background" id="background1" onclick="closePopup('popup1', 'background1')"></div>
+					<br><a>Clique na imagem para ampliar</a>
+				</div>
+			</div>
 
+			<div class="container_i">
+				<div class="boxGUIAS">
+					<ul>
+						<li onclick="mostrarConteudo('guia-1', this)" class="active">Imagem do Satélite</li>
+						<li onclick="mostrarConteudo('guia-2', this)">Infra-vermelha (Nacional)</li>
+						<li onclick="mostrarConteudo('guia-3', this)">Infra-vermelha (Sudeste)</li>
+						<li onclick="mostrarConteudo('guia-4', this)">Visível</li>
+						<li onclick="mostrarConteudo('guia-5', this)">Vapor d'água</li>
+					</ul>
+				</div>
+				<div class="boxINFO2">
+					<div id="guia-1" class="guia" style="display: block;">
+						<h2>Imagem do Satélite</h2>
+						<p>Conteúdo da guia "Imagem do Satélite".</p>
+					</div>
+
+					<div id="guia-2" class="guia" style="display: none;">
+						<h2>Infra-vermelha (Nacional)</h2>
+						<p>Conteúdo da guia "Infra-vermelha (Nacional)".</p>
+					</div>
+
+					<div id="guia-3" class="guia" style="display: none;">
+						<h2>Infra-vermelha (Sudeste)</h2>
+						<p>Conteúdo da guia "Infra-vermelha (Sudeste)".</p>
+					</div>
+
+					<div id="guia-4" class="guia" style="display: none;">
+						<h2>Visível</h2>
+						<p>Conteúdo da guia "Visível".</p>
+					</div>
+
+					<div id="guia-5" class="guia" style="display: none;">
+						<h2>Vapor d'água</h2>
+						<p>Conteúdo da guia "Vapor d'água".</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<!-- Script de atualizar imagem da Descarga-->
+	<script>
+		function updateImage() {
+		  console.log('Atualizando imagem...');
+		  var img = document.getElementById("descarga");
+		  var src = img.getAttribute("src");
+		  img.setAttribute("src", src);
+		  img.setAttribute("src", src + "?timestamp=" + new Date().getTime());
+		  setTimeout(updateImage, 30000); // atualizar a cada um minuto (60 segundos)
+		}
+		updateImage(); // iniciar a atualização da imagem
+	</script>
+
+<!-- Script dos botões dos satélites-->
+	<script>
+		function mostrarConteudo(guiaId, guiaElemento) {
+			// Esconde o conteúdo de todas as guias
+			var guias = document.querySelectorAll(".guia");
+			for (var i = 0; i < guias.length; i++) {
+				guias[i].style.display = "none";
+			}
+
+			// Exibe o conteúdo da guia selecionada
+			document.getElementById(guiaId).style.display = "block";
+
+			// Define a guia selecionada como ativa
+			var guiasAtivas = document.querySelectorAll(".active");
+			for (var i = 0; i < guiasAtivas.length; i++) {
+				guiasAtivas[i].classList.remove("active");
+			}
+			guiaElemento.classList.add("active");
+		}
+
+		// Define a guia "Imagem do Satélite" como a selecionada por padrão
+		var guiaPadrao = document.querySelector("#guia-1");
+		var botaoPadrao = document.querySelector("li:first-child");
+		mostrarConteudo(guiaPadrao.id, botaoPadrao);
+	</script>
+
+	<!--<script src="js/boxClimaSlide.js"></script>-->
+	<script src="js/popup.js"></script>
+
+<!-- Script para pegar a data do dia-->
+	<script type="text/javascript">
+		n =  new Date();
+		y = n.getFullYear();
+		m = n.getMonth() + 1;
+		if (m<10){ m="0"+m}
+		d = n.getDate();
+        if (d<10){ d="0"+d}
+		document.getElementById("date").innerHTML = d + "/" + m + "/" + y;
+	</script>
+
+
+	<footer class="footer">
+		<div class="footer-container">
+			<div class="footer-row">
+				<div class="footer-col footer-text">
+					<p>Desenvolvido pelo Laboratório de Análises e Previsões Ambientais - LAPA - Coordenação de Meteorologia do Cefet/RJ.</p>
+				</div>
+				<div class="footer-col footer-links">
+					<ul>
+						<li><a href="politica.html">Política de Uso</a></li>
+						<li><a href="quemsomos.html">Sobre Nós</a></li>
+						<li><a href="#topo">Voltar para o topo</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+
+</body>
 
 </html>
