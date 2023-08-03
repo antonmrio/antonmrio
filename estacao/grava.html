@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Basic JSON Editor Example</title>
+	    <!-- Foundation CSS framework (Bootstrap and jQueryUI also supported) -->
+    <link rel='stylesheet' href='css/foundation.min.css'>
+    <!-- Font Awesome icons (Bootstrap, Foundation, and jQueryUI also supported) -->
+    <link rel='stylesheet' href='css/font-awesome.css'>
+	
+    <script src="js/jsoneditor.js"></script>
+	<script src="js/jquery-1.11.3.min.js"></script>
+  </head>
+  <body>
+    <h1>Basic JSON Editor Example</h1>
+    
+    <div id='editor_holder'></div>
+    <button id='submit'>Submit (console.log)</button>
+    
+    <script>
+      // Initialize the editor with a JSON schema
+      var editor = new JSONEditor(document.getElementById('editor_holder'),{
+        schema: {
+          type: "object",
+          title: "Comet",
+          properties: {
+			horarioLocalLeitura: {"title": "Horário local da leitura",type: "string"},
+            pressaoAtmosferica: {"title": "Pressão Atmosférica",type: "string"},
+			temperaturaAr: {"title": "Temperatura do Ar",type: "string"},
+			temperaturaMax: {"title": "Temperatura Máxima",type: "string"},
+			temperaturaMin: {"title": "Temperatura Mínima",type: "string"},
+			umidadeRelativaAr: {"title": "Umidade Relativa do Ar",type: "string"},
+			umidadeMin: {"title": "Umidade Mínima",type: "string"},
+			chuvaAcumulada24h: {"title": "Chuva Acumulada em 24h",type: "string"},
+			chuvaAcumuladaSemana: {"title": "Chuva Acumulada na Semana",type: "string"},
+			chuvaAcumuladaMes: {"title": "Chuva Acumulada no Mês",type: "string"},
+			ventoIntensidade: {"title": "intensidade do vento",type: "string"},
+			ventoDirecao: {
+			"title": "Direção do vento",
+			type: "string",
+			 enum: [
+                "E: este/leste",
+				"N: norte",
+				"O: oeste",
+				"S: sul",
+				"NE: nordeste",
+				"NO: noroeste",
+				"SE: sudeste",
+				"SO: sudoeste",
+				"ENE: lés-nordeste",
+				"ESE: lés-sudeste",
+				"SSE: sul-sudeste",
+				"NNE: nor-nordeste",
+				"NNO: nor-noroeste",
+				"SSO: sul-sudoeste",
+				"OSO: oés-sudoeste",
+				"ONO: oés-noroeste"
+              ]
+			}
+            
+          }
+        }
+      });
+      
+      // Hook up the submit button to log to the console
+      document.getElementById('submit').addEventListener('click',function() {
+        // Get the value from the editor
+        console.log(editor.getValue());
+		
+		
+				$.ajax({
+					url     : 'grava.php',
+					method  : 'post',
+					data    : { 'dados': editor.getValue() },
+					success : function( response ) {
+						alert( response );
+					}
+				});
+		
+      });
+    </script>
+  </body>
+</html>

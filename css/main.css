@@ -1,14 +1,18 @@
 body {
+	min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 	margin: 0;
-	margin-top: 80px;
+	margin-top: 40px;
 	padding: 0;
 	background-color: #f2f2f2;
+	background-image: linear-gradient(#043d6b, #1d405d, #879aaa, #f2f2f2, #f2f2f2);
 }
 
 hr {
 	border: 0; 
 	height: 2px; 
-	background-image: linear-gradient(to right,#f2f2f2, #4C647B, #647b4c, #f2f2f2);
+	background-image: linear-gradient(to right,#f2f2f2, #4C647B, #4C647B, #f2f2f2);
 }
 
 .topo {
@@ -28,7 +32,7 @@ hr {
 	width: 100%;
 }
 #menu {
-	background-color: #DBDBDB;
+	background-color: #043d6b;
 	text-align: center;
 	font-size: 9px;
 	padding: 10px 0;
@@ -39,7 +43,7 @@ hr {
 }
 #menu a {
 	text-decoration: none;
-	color: black;
+	color: white;
 	padding: 10px;
 	text-align: center;
 	font-family: "Open Sans", sans-serif;
@@ -47,35 +51,67 @@ hr {
 	text-transform: uppercase;
 }
 #menu a:hover {
-	background-color: #f2f2f2;
+	background-color: #041d32;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 600;
 	
       }
-#menu a:not(:last-child) { border-right: 1px solid black; border-right-color: #CCCCCC;}
+#menu a:not(:last-child) { border-right: 1px solid black; border-right-color: #01335b;}
 
 h1{
 	font-family: 'Open Sans', sans-serif;
-	font-weight: 600;
-	font-size: 20px;
-	text-transform: uppercase;
+	font-size: 14.5px;
+	/*text-transform: uppercase;*/
+	/*font-weight: 600;*/
+	/*text-align: center;*/
 }
+h2{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	text-align: center;
+}
+
 #textomeio{
 	margin: 10%;
 	font-family: "Open Sans", sans-serif;
 	text-align: justify;
+	background-color: white;
+	padding: 15px;
+	border-radius: 5px;
 }
 #textomeio h1{text-transform: uppercase;}
+
+/*Estilização dos dropdownPrevs, usado na aba previsão*/
+.dropdownPrev {
+	background-color: #58988d;
+	border-radius: 5px;
+	display: inline-flex;
+	margin-right: 1vw;
+	margin-bottom: 3vw;
+	box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+}
+.dropdownPrev select {
+	background-color: transparent;
+	border: none;
+ 	outline: none;
+ 	color: white;
+ 	padding: 10px 15px;
+}
+.dropdownPrev select option {
+  background-color: #fff;
+  color: #000;
+}
 
 /* Estilos para o footer */
 .footer {
   background-color: #0A497E;
   color: #fff;
-  padding: 10px 0;
+
   bottom: 0;
   left: 0;
   width: 100%;
-  font-family: "Open Sans"
+  font-family: "Open Sans";
+  margin-top: auto;
 }
 
 /* Estilos para o container do footer */

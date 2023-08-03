@@ -1,0 +1,45 @@
+	/*Estilização das caixas*/
+	.dropdown, .dropdown2{
+		text-align: center;
+		font-size: 12px;
+		font-family: 'Open Sans', sans-serif;
+	}
+	.dropdown > a:first-child, .dropdown2 > a:first-child{
+		width: 95%;
+		height: 3vh;
+	}
+	.dropdown a, .dropdown2 a {
+		border-top: 1px solid #505060;
+        		display: inline-block;
+        		background-color: white;
+        		border-radius: 5px;
+        		margin-right: 5px;
+        		margin-bottom: 5px;
+        		padding: 10px;
+        		color: #121212; 
+        		text-decoration: none;
+		height: 5vh;
+		width: 85%;
+    	}
+	.dropdown a:hover, .dropdown2 a:hover {
+		background-color: #f0f0f0;
+		outline: 1px solid #3d3d3d;
+	}
+    	.dropdown ul, .dropdown2 ul {
+       		padding: 0;
+        	margin: 0;
+        	list-style: none;
+			
+    	}
+	.dropdown ul li, .dropdown2 ul li{
+		display: inline-block;
+	}
+	.dropdown div ul, .dropdown2 div ul {
+  		display: grid;
+  		grid-template-columns: repeat(4, 1fr);
+  		grid-template-rows: repeat(2, auto);
+  		/*gap: 10px;
+ 		margin: 0;
+  		padding: 0;*/
+  		list-style-type: none;
+	}

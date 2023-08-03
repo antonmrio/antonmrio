@@ -1,0 +1,105 @@
+b#maior{
+  font-size: 60px;
+}
+.list-group{
+	margin: 7px;
+  vertical-align: middle;
+  background-color: rgba(0, 0, 0, 0);
+}
+.list-group-item{
+  width: auto;
+  vertical-align: middle;
+  font-size: 17px;
+  font-weight: 700;
+  padding: 0px;
+  background-color: rgba(255, 255, 255, 0.85)!important;
+  border-top: 2px solid rgba(0, 0, 0, 0.3)!important;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3)!important;
+}
+.dial{
+  position: relative;
+  float: right !important;
+  margin-left: 30px;
+}
+span#temperaturaAr{
+	font-weight: bold;
+  font-size: 50px;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  border-radius: 0.25rem;
+  padding: 30px;
+}
+
+.grid-item {
+  border: 1px solid (0, 0, 0, 1);
+  padding: 20px;
+  font-size: 14px;
+  text-align: center;
+}
+.parent img{
+  width: 100%;
+}
+.line{
+    width: 600px;
+    height: 47px;
+    border-bottom: 1px solid black;
+    position: relative;
+    }
+.container{
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.buuu{
+  text-align: center;
+  animation: mymove 2s;
+.titulo{
+  animation: mymove 2s;
+}
+}
+.ba{
+  padding: 10px;
+  float: center;
+  animation: mymove 2s;
+  color: rgb(0,0,0);
+}
+@keyframes mymove {
+  from {left: -100px;}
+  to {left: 0px;}
+}
+hr.style12 {
+  height: 5px;
+  border: 10px;
+  border-color: #5a9cce;
+  border-radius: 100px;
+}
+hr.new5 {
+  border: 2px solid #5a9cce;
+  border-radius: 1000px;
+  width: 58%;
+}
+.vl {
+  position: relative;
+  border-left: 2px solid #5a9cce;;
+  height: auto;
+  border-radius: 20px;
+}
+.main{
+  margin-left: 0;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.graficos{
+  margin: 4rem;
+  padding-top: 10px;
+}
+.grau{
+    font-size: 50px;
+}
+#icon{
+  color: rgb(0,0,0);
+}
