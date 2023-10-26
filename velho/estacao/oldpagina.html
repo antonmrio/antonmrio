@@ -1,0 +1,236 @@
+﻿<!doctype html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/pagclima/css3.css">
+<link rel="stylesheet" href="../css/boxClima.css">
+<link rel="stylesheet" href="../css/navbar.css">
+<link rel="stylesheet" href="../css/popup.css">
+<link rel="stylesheet" href="css/caixa.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+<link rel="icon" type="image/x-icon" href="../imagens/cefetrj.ico">
+<!--<link rel='stylesheet' type='text/css' href='../css2.css' />-->
+
+<title>LAPA - Laboratório de Análises e Previsões Ambientais - CoordMet / CEFET-RJ</title>
+<script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<style>
+.list-group{
+	margin: 30px;
+}
+
+
+.container{
+	width: 800px;
+}
+
+.list-group-item-secondary{
+    color: #383d41;
+    background-color: #8fbb44;
+}
+
+.list-group-item{
+    position: relative;
+    text-align: center;
+    display: block;
+    padding: 0.45rem 1.25rem;
+    margin-bottom: -1px;
+    border: 1px solid rgba(0,0,0,.125);
+}
+span{
+	font-weight: bold;
+}
+.infos{
+	padding-top: 2%; 
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+}
+.sub-infos{
+	padding-top: 2%; 
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+	overflow: auto;
+}
+
+.responsive {
+  width: 10%;
+  height: auto;
+}
+
+.triangleMin {
+	width: 0px;
+   height: 0px;
+   border-style: solid;
+   border-width: 13.9px 8px 0 8px;
+   border-color: #31CDFF transparent transparent transparent;
+   transform: rotate(0deg);
+}
+
+.triangleMax {
+	width: 0px;
+   height: 0px;
+   border-style: solid;
+   border-width: 0 8px 13.9px 8px;
+   border-color: transparent transparent #FF3333 transparent;
+   transform: rotate(0deg);
+}
+</style>
+
+</head>
+<body id='body'>
+
+<!-- inicio topo-->
+
+<div id="topo" style="z-index: 999">
+	<div id="header">
+		Laboratório de Análises e Previsões Ambientais - CoordMet / CEFET-RJ
+	</div>
+	<div id="menu">
+		<a href="../index.html">Início</a>
+		<a href="../previsao.html">Previsão do Tempo</a>
+		<a href="../clima.html">Previsão do Clima</a>
+		<a href="../satelites.html">Satélites</a>
+		<!--<a href="x5.html">Descarga Atmosférica</a>-->
+		<a href="../estacao/pagina.html">Estação Meteorológica</a>
+	</div>
+</div>
+
+<br>
+<br>
+
+
+<div id="textomeio" style="margin: 5%">
+
+<div id="navcontainer">
+	<ul>
+		<li>
+			<a href="../estacao/pagina.html">Estação Convencional</a>
+		</li>
+		<li>
+      <a href="../estacao/estacaoauto.html">Estação Automática</a>
+		</li>
+	</ul>
+</div>
+
+<br>
+
+<div class="principal" style="padding:3%; padding-top: 0%;">
+	<center>
+	<p style="font-size: 1.2rem">Estação Meteorológica Ambiental</p>
+	<p>Lat:-22,91º - Long: -43,22º</p>
+	</center>
+	
+	<hr>
+
+	<div class="row">
+	<div class="col-sm"><br>Data e hora local da observação: <span id='horarioLocalLeitura'></span></div>
+	</div>
+
+	<div class="infos">
+		<div class="data">
+			<span id="horarioLocalLeitura" style="font-size: 2.5vw;">28/09/2023 15:00h</span>
+		</div>
+
+		
+		<div class="temperatura">
+			<span id="temperaturaAr" style="font-size: 4.5vw; font-weight: 800; color: #0058a3;">23,8</span><a>ºC</a>
+			<p>Temperatura do Ar</p>
+		</div>
+		<div class="min-max">
+			<div class="temperatura" style="font-size: 2vw; font-weight: 300;">
+				<div class="triangleMin"></div><span id="temperaturaMin" style="color: #31CDFF;">22,8</span><a>ºC</a>
+				<div class="triangleMax"></div><span id="temperaturaMax" style="color: #FF3333;">25,1</span><a>ºC</a>
+			</div>
+		</div>
+		
+	</div>
+
+	<hr>
+
+	<div class="sub-infos">
+		<div style="column-gap: 56px; display: flex;">
+			<div class="umidade">
+				<img src="../imagens/umidade.png" alt="Umidade Relativa" class="responsive">
+				<p>Umidade do ar:</p>
+				<li class="list-group-item">Umidade Relativa do Ar: <span id="umidadeRelativaAr">64</span> %</li>
+				<li class="list-group-item">Umidade Min: <span style="color:blue" id="umidadeMin">57</span> %</li>
+			</div>
+
+			<div class="chuva">
+				<img src="../imagens/chuva.png" alt="Chuva" class="responsive">
+				<p>Chuva:</p>
+				<li class="list-group-item">Acumulada 15 min: <span id="chuvaAcumulada24h">////</span> mm</li>
+				<li class="list-group-item">Acumulada 60 min: <span id="chuvaAcumuladaSemana">////</span> mm</li>
+				<li class="list-group-item">Acumulada 24 horas: <span id="chuvaAcumuladaMes">2,9</span> mm</li>
+			</div>
+
+			<div class="vento">
+				<img src="../imagens/vento.png" alt="Vento" class="responsive">
+				<p>Vento:</p>
+				<li class="list-group-item">Intensidade: <span id="ventoIntensidade2">7.2</span> km/h (<span id="ventoIntensidade">2</span> m/s)</li>
+				<li class="list-group-item">Direção: <span id="ventoDirecao">SE: sudeste</span> </li>
+			</div>
+
+			<div class="pressao">
+				<img src="../imagens/pressao.png" alt="Pressão Atmosférica" class="responsive">
+				<p>Pressão Atmosférica:</p>
+				<li class="list-group-item">Pressão Atmosférica: <span id="pressaoAtmosferica">1015</span> hPa</li>
+			</div>
+		</div>
+	</div>
+	
+</div>
+</div>
+
+<script>
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+
+    var myObj = JSON.parse(this.responseText);
+	
+	for (var k in myObj){
+		if (typeof myObj[k] !== 'function') {
+			document.getElementById(k).innerHTML = myObj[k];
+			if (k == 'ventoIntensidade'){document.getElementById('ventoIntensidade2').innerHTML = (myObj[k] * 3.6).toFixed(1);
+			
+			}
+			
+			console.log("Key is " + k + ", value is" + myObj[k]);
+		}
+	}
+  }
+};
+xmlhttp.open("GET", "leitura.json", true);
+xmlhttp.send();
+</script>
+
+</div>
+</div>
+
+<footer class="footer">
+	<div class="footer-container">
+		<div class="footer-row">
+			<div class="footer-col footer-text">
+				<p>Desenvolvido pelo Laboratório de Análises e Previsões Ambientais - LAPA - Coordenação de Meteorologia do Cefet/RJ.</p>
+			</div>
+			<div class="footer-col footer-links">
+				<ul>
+					<li><a href="../politica.html">Política de Uso</a></li>
+					<li><a href="../quemsomos.html">Sobre Nós</a></li>
+					<li><a href="#topo">Voltar para o topo</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>
+
+</body>
+</html>
