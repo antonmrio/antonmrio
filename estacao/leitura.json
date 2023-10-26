@@ -1,1 +1,14 @@
-{"horarioLocalLeitura":"06 de fevereiro, 12:00 horas","pressaoAtmosferica":"1009,9","temperaturaAr":"29,4","temperaturaMax":"29,4","temperaturaMin":"26,3","umidadeRelativaAr":"48","umidadeMin":"48","chuvaAcumulada24h":"\/\/\/\/","chuvaAcumuladaSemana":"\/\/\/\/","chuvaAcumuladaMes":"\/\/\/\/","ventoIntensidade":"\/\/\/\/"}
+{
+  "horarioLocalLeitura": "05/10/2023 15:00h",
+  "pressaoAtmosferica": "1002,8",
+  "temperaturaAr": "32",
+  "temperaturaMax": "35,2",
+  "temperaturaMin": "20,7",
+  "umidadeRelativaAr": "66",
+  "umidadeMin": "///",
+  "chuvaAcumulada24h": "///",
+  "chuvaAcumuladaSemana": "///",
+  "chuvaAcumuladaMes": "///",
+  "ventoIntensidade": "0",
+  "ventoDirecao": "N: norte"
+}

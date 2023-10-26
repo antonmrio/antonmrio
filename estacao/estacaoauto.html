@@ -1,0 +1,160 @@
+﻿<!doctype html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/pagclima/css3.css">
+<link rel="stylesheet" href="../css/boxClima.css">
+<link rel="stylesheet" href="../css/navbar.css">
+<link rel="stylesheet" href="../css/popup.css">
+<link rel="stylesheet" href="css/caixa.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+<link rel="icon" type="image/x-icon" href="../imagens/cefetrj.ico">
+<!--<link rel='stylesheet' type='text/css' href='../css2.css' />-->
+
+<title>LAPA - Laboratório de Análises e Previsões Ambientais - CoordMet / CEFET-RJ</title>
+
+<style>
+  body{
+  font-family: 'Open Sans', sans-serif;
+  }
+  table {
+     border-collapse: collapse;
+    width: 100%;
+  }
+  th, td {
+    border: 1px solid #6c9fc2;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: #6c9fc2;/* Fundo cinza para todas as colunas da primeira linha */
+    color: white;
+  }
+  td {
+    background-color: #ffffff; /* Fundo branco para todas as colunas da segunda linha */
+  }
+.tabela-arredondada {
+      border-radius: 10px; /* Bordas arredondadas para o div */
+      overflow: auto; /* Ocultar conteúdo que ultrapassa os limites arredondados */
+      margin: 20px; /* margem para espaçamento */
+      border: 2px solid #6c9fc2; /* borda aqui */
+    }
+
+</style>
+
+</head>
+<body id='body'>
+
+<!-- inicio topo-->
+
+<div id="topo" style="z-index: 999">
+	<div id="header">
+		Laboratório de Análises e Previsões Ambientais - CoordMet / CEFET-RJ
+	</div>
+	<div id="menu">
+		<a href="../index.html">Início</a>
+		<a href="../previsao.html">Previsão do Tempo</a>
+		<a href="../clima.html">Previsão do Clima</a>
+		<a href="../satelites.html">Satélites</a>
+		<!--<a href="x5.html">Descarga Atmosférica</a>-->
+		<a href="../estacao/pagina.html">Estação Meteorológica</a>
+	</div>
+</div>
+
+<br>
+<br>
+
+
+<div id="textomeio" style="margin: 5%">
+
+<div id="navcontainer">
+	<ul>
+		<li>
+			<a href="../estacao/pagina.html">Estação Convencional</a>
+		</li>
+		<li>
+      <a href="../estacao/estacaoauto.html">Estação Automática</a>
+		</li>
+	</ul>
+</div>
+
+<br>
+
+  <h1>Tabela de Dados de Chuva</h1>
+<div class="tabela-arredondada">
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Estação</th>
+      <th>Última Leitura</th>
+      <th>10 min</th>
+      <th>30 min</th>
+      <th>1h</th>
+      <th>24h</th>
+    </tr>
+    <tr>
+      <td id="idCelula"></td>
+      <td>Maracanã - RJ/RJ</td>
+      <td id="UltimaLida"></td>
+      <td id="DezMinCelula"></td>
+      <td id="MeiaHoraCelula"></td>
+      <td id="UmaHoraCelula"></td>
+      <td id="UltimoDiaCelula"></td>
+    </tr>
+  </table>
+</div>
+
+ <script>
+function pegarDadosChuvaExemplo(intervaloMinutos, idCelula, UltimaLida, CelulaIntervalo) {
+  var request = {
+    numeroEstacao: [66],
+    minutos: intervaloMinutos
+  };
+
+  fetch('https://meteoro-cefet-back.fly.dev/dados/chuva', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(request)
+  })
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(dados) {
+    var dado = dados[0];
+    
+    document.getElementById(idCelula).textContent = dado.id; // ID da estação
+    document.getElementById(UltimaLida).textContent = dado.lastRead; // Valor da ultima leitura
+    document.getElementById(CelulaIntervalo).textContent = dado.value; // Valor para o intervalo de tempo especificado
+  });
+}
+
+pegarDadosChuvaExemplo(10, "idCelula", "UltimaLida", "DezMinCelula"); // Valor para ultimos 10 minutos
+pegarDadosChuvaExemplo(30, "idCelula", "UltimaLida", "MeiaHoraCelula"); // Valor para ultimos 30 minutos
+pegarDadosChuvaExemplo(60, "idCelula", "UltimaLida", "UmaHoraCelula"); // Valor para ultima hora
+pegarDadosChuvaExemplo(1440, "idCelula", "UltimaLida", "UltimoDiaCelula"); // Valor para 24 horas
+
+</script>
+</div>
+
+<footer class="footer">
+	<div class="footer-container">
+		<div class="footer-row">
+			<div class="footer-col footer-text">
+				<p>Desenvolvido pelo Laboratório de Análises e Previsões Ambientais - LAPA - Coordenação de Meteorologia do Cefet/RJ.</p>
+			</div>
+			<div class="footer-col footer-links">
+				<ul>
+					<li><a href="../politica.html">Política de Uso</a></li>
+					<li><a href="../quemsomos.html">Sobre Nós</a></li>
+					<li><a href="#topo">Voltar para o topo</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>
+
+</body>
+</html>
