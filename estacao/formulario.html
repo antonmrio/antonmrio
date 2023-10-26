@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Página com senha e formulário</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #container {
+            width: 80%;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        #formulario {
+            display: none;
+        }
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+        .input-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .input-container label, .input-container input, .input-container button, .input-container checkbox {
+            flex: 1;
+        }
+        select {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Bem-vindo</h1>
+        <p>Esta é uma página protegida por senha. Insira a senha para acessar:</p>
+        <button onclick="mostrarPopup()">Entrar</button>
+        <div id="formulario">
+            <h2>Formulário</h2>
+            <p>Caso não tenha o valor, ative a caixa que marcará como "///".</p>
+            <hr>
+            <form id="meuFormulario">
+                <div class="input-container">
+                    <label for="horarioLocalLeitura">Data e Hora de Leitura:</label>
+                    <input type="datetime-local" id="horarioLocalLeitura" required><input type="checkbox" id="disableDataHora">
+                </div>
+                <div class="input-container">
+                    <label for="pressaoAtmosferica">Pressão Atmosférica:</label>
+                    <input type="text" id="pressaoAtmosferica" required><input type="checkbox" id="disablePressao">
+                </div>
+                <div class="input-container">
+                    <label for="temperaturaAr">Temperatura do Ar:</label>
+                    <input type="text" id="temperaturaAr" required><input type="checkbox" id="disableTemperaturaAr">
+                </div>
+                <div class="input-container">
+                    <label for="temperaturaMax">Temperatura Máxima:</label>
+                    <input type="text" id="temperaturaMax" required><input type="checkbox" id="disableTemperaturaMax">
+                </div>
+                <div class="input-container">
+                    <label for="temperaturaMin">Temperatura Mínima:</label>
+                    <input type="text" id="temperaturaMin" required><input type="checkbox" id="disableTemperaturaMin">
+                </div>
+                <div class="input-container">
+                    <label for="umidadeRelativaAr">Umidade Relativa do Ar:</label>
+                    <input type="text" id="umidadeRelativaAr" required><input type="checkbox" id="disableUmidadeRelativaAr">
+                </div>
+                <div class="input-container">
+                    <label for="umidadeMin">Umidade Mínima:</label>
+                    <input type="text" id="umidadeMin" required><input type="checkbox" id="disableUmidadeMin">
+                </div>
+                <div class="input-container">
+                    <label for="chuvaAcumulada24h">Chuva Acumulada em 24 horas:</label>
+                    <input type="text" id="chuvaAcumulada24h" required><input type="checkbox" id="disableChuva24h">
+                </div>
+                <div class="input-container">
+                    <label for="chuvaAcumuladaSemana">Chuva Acumulada na Semana:</label>
+                    <input type="text" id="chuvaAcumuladaSemana" required><input type="checkbox" id="disableChuvaSemana">
+                </div>
+                <div class="input-container">
+                    <label for="chuvaAcumuladaMes">Chuva Acumulada no Mês:</label>
+                    <input type="text" id="chuvaAcumuladaMes" required><input type="checkbox" id="disableChuvaMes">
+                </div>
+                <div class="input-container">
+                    <label for="ventoDirecao">Direção do Vento:</label>
+                    <select id="ventoDirecao" required>
+                        <option value="E">Este/Leste</option>
+                        <option value="N">Norte</option>
+                        <option value="O">Oeste</option>
+                        <option value="S">Sul</option>
+                        <option value="NE">Nordeste</option>
+                        <option value="NO">Noroeste</option>
+                        <option value="SE">Sudeste</option>
+                        <option value="SO">Sudoeste</option>
+                        <option value="ENE">Lés-Nordeste</option>
+                        <option value="ESE">Lés-Sudeste</option>
+                        <option value="SSE">Sul-Sudeste</option>
+                        <option value="NNE">Nor-Nordeste</option>
+                        <option value="NNO">Nor-Noroeste</option>
+                        <option value="SSO">Sul-Sudoeste</option>
+                        <option value="OSO">Oés-Sudoeste</option>
+                        <option value="ONO">Oés-Noroeste</option>
+                    </select>
+                </div>
+                <hr><button type="button" onclick="gerarJSON()">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function mostrarPopup() {
+            const senhaCorreta = "suaSenhaAqui"; // Defina a senha correta
+            const senhaInput = prompt("Insira a senha para acessar:");
+
+            if (senhaInput === senhaCorreta) {
+                document.getElementById("container").removeChild(document.querySelector("h1"));
+                document.getElementById("container").removeChild(document.querySelector("p"));
+                document.getElementById("container").removeChild(document.querySelector("button"));
+                document.getElementById("formulario").style.display = "block";
+            } else {
+                alert("Senha incorreta. Tente novamente.");
+            }
+        }
+
+        function formatarData(data) {
+            const dataObj = new Date(data);
+            const dia = String(dataObj.getDate()).padStart(2, '0');
+            const mes = String(dataObj.getMonth() + 1).padStart(2, '0');
+            const ano = dataObj.getFullYear();
+            const hora = String(dataObj.getHours()).padStart(2, '0');
+            const minutos = String(dataObj.getMinutes()).padStart(2, '0');
+            return `${dia}/${mes}/${ano} ${hora}:${minutos}h`;
+        }
+
+        function gerarJSON() {
+            const data = {
+                horarioLocalLeitura: document.getElementById("disableDataHora").checked ? "///" : formatarData(document.getElementById("horarioLocalLeitura").value),
+                pressaoAtmosferica: document.getElementById("disablePressao").checked ? "///" : document.getElementById("pressaoAtmosferica").value,
+                temperaturaAr: document.getElementById("disableTemperaturaAr").checked ? "///" : document.getElementById("temperaturaAr").value,
+                temperaturaMax: document.getElementById("disableTemperaturaMax").checked ? "///" : document.getElementById("temperaturaMax").value,
+                temperaturaMin: document.getElementById("disableTemperaturaMin").checked ? "///" : document.getElementById("temperaturaMin").value,
+                umidadeRelativaAr: document.getElementById("disableUmidadeRelativaAr").checked ? "///" : document.getElementById("umidadeRelativaAr").value,
+                umidadeMin: document.getElementById("disableUmidadeMin").checked ? "///" : document.getElementById("umidadeMin").value,
+                chuvaAcumulada24h: document.getElementById("disableChuva24h").checked ? "///" : document.getElementById("chuvaAcumulada24h").value,
+                chuvaAcumuladaSemana: document.getElementById("disableChuvaSemana").checked ? "///" : document.getElementById("chuvaAcumuladaSemana").value,
+                chuvaAcumuladaMes: document.getElementById("disableChuvaMes").checked ? "///" : document.getElementById("chuvaAcumuladaMes").value,
+                ventoDirecao: document.getElementById("ventoDirecao").value,
+            };
+
+            const jsonData = JSON.stringify(data);
+
+            // Crie um elemento 'a' para download do JSON
+            const a = document.createElement("a");
+            a.href = "data:text/json;charset=utf-8," + encodeURIComponent(jsonData);
+            a.download = "leitura.json";
+            a.innerHTML = "Baixar Leitura JSON";
+
+            // Adicione o link de download à página
+            document.body.appendChild(a);
+
+            // Simule um clique no link para iniciar o download
+            a.click();
+        }
+        
+        // Adicione uma função para habilitar ou desabilitar campos ao marcar/desmarcar a caixa
+        const checkboxElements = document.querySelectorAll('input[type="checkbox"]');
+        checkboxElements.forEach((checkbox) => {
+            checkbox.addEventListener("change", function () {
+                const relatedInput = this.parentNode.querySelector('input[type="text"]');
+                if (this.checked) {
+                    relatedInput.setAttribute("disabled", "disabled");
+                } else {
+                    relatedInput.removeAttribute("disabled");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
