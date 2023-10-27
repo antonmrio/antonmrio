@@ -42,12 +42,12 @@
 </head>
 <body>
     <div id="container">
-        <h1>Bem-vindo</h1>
-        <p>Esta é uma página protegida por senha. Insira a senha para acessar:</p>
+        <h1>Formulário para alterar os dados da Estação Convencional</h1>
+        <p>Insira a senha para acessar:</p>
         <button onclick="mostrarPopup()">Entrar</button>
         <div id="formulario">
             <h2>Formulário</h2>
-            <p>Caso não tenha o valor, ative a caixa que marcará como "///".</p>
+            <p>Se não tiver o valor certo para mostrar, ative a caixa de seleção ao lado da caixa de texto, ela marcará o valor "///", que será exibido no site..</p>
             <hr>
             <form id="meuFormulario">
                 <div class="input-container">
@@ -118,7 +118,7 @@
 
     <script>
         function mostrarPopup() {
-            const senhaCorreta = "suaSenhaAqui"; // Defina a senha correta
+            const senhaCorreta = "1234"; // Defina a senha correta
             const senhaInput = prompt("Insira a senha para acessar:");
 
             if (senhaInput === senhaCorreta) {
